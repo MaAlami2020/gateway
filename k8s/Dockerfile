@@ -1,22 +1,21 @@
 #FRONTEND
 #selection of the image base
-#FROM node:18-alpine AS frontend-builder
-#
-##definition of the work directory in /project to execute commands
-#WORKDIR /project/Store-frontend
-#
-## Copiar SOLO el frontend
+FROM node:18-alpine AS frontend-builder
+
+#definition of the work directory in /project to execute commands
+WORKDIR /project
+# Copiar SOLO el frontend
 #COPY Store-frontend/package*.json ./
-#
-##dependencies app need are installed
-#RUN npm install
-#
-##files from frontend are copied on work directory
-#COPY Store-frontend/ .
-#
-#
-##files to production are generated in the specific route "new"
-#RUN npm run build -- --base=href=/new/
+
+#dependencies app need are installed
+RUN npm install
+
+#files from frontend are copied on work directory
+COPY Store-frontend/ .
+
+
+#files to production are generated in the specific route "new"
+RUN npm run build -- --base=href=/new/
 
 ##BACKEND
 
