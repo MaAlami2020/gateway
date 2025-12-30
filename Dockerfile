@@ -14,9 +14,6 @@ RUN npm install
 #files from frontend are copied on work directory
 COPY store-frontend/ ./
 
-# Debug (NO LO QUITES hasta que funcione)
-RUN pwd && ls -la && ls -la angular.json
-
 #files to production are generated in the specific route "new"
 RUN npx ng build -- --base-href=/new/
 
