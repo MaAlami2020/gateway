@@ -3,7 +3,7 @@
 FROM node:18-alpine AS builder
 
 #definition of the work directory in /project to execute commands
-WORKDIR /project/Store-frontend
+WORKDIR /Store-frontend
 
 # Copiar SOLO el frontend
 COPY Store-frontend/package*.json ./
