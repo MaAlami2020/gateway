@@ -15,7 +15,7 @@ RUN npm install
 
 
 #files to production are generated in the specific route "new"
-RUN npm run build -- --base=href=/new/
+RUN npm run build -- --base-href=/new/
 
 ##BACKEND
 
