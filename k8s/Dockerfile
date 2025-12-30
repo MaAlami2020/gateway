@@ -3,13 +3,18 @@
 FROM node:18-alpine AS builder
 
 #definition of the work directory in /project to execute commands
-WORKDIR /project
+WORKDIR /project/Store-frontend
+
+# Copiar SOLO el frontend
+COPY Store-frontend/package*.json ./
+
+#dependencies app need are installed
+RUN npm install
+
 
 #files from frontend are copied on work directory
 COPY Store-frontend/ .
 
-#dependencies app need are installed
-RUN npm install
 
 #files to production are generated in the specific route "new"
 RUN npm run build -- --base=href=/new/
