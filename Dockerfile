@@ -8,8 +8,7 @@ WORKDIR /project/store-frontend
 COPY store-frontend/package*.json ./
 COPY store-frontend/angular*.json ./
 
-#dependencies app need are installed
-RUN npm install
+
 
 #files from frontend are copied on work directory
 COPY store-frontend/ ./
