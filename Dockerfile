@@ -6,7 +6,7 @@ FROM node:18-alpine AS builder
 WORKDIR /project/Store-frontend
 
 # Copiar SOLO el frontend
-COPY Store-frontend/package.json ./
+COPY package.json ./
 
 #dependencies app need are installed
 RUN npm install
