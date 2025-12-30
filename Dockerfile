@@ -8,7 +8,8 @@ WORKDIR /project/store-frontend
 COPY store-frontend/package*.json ./
 COPY store-frontend/angular*.json ./
 
-
+#dependencies app need are installed
+RUN npm install
 
 #files from frontend are copied on work directory
 COPY store-frontend/ ./
@@ -16,7 +17,7 @@ COPY store-frontend/ ./
 
 
 #files to production are generated in the specific route "new"
-RUN npm run build -- --base-href=/new/
+RUN npm run build -- --base-href=/spa/
 
 ##BACKEND
 
