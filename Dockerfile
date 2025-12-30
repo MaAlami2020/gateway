@@ -3,12 +3,12 @@
 FROM node:18-alpine AS frontend-builder
 
 #definition of the work directory in /project to execute commands
-WORKDIR /project
+WORKDIR /project/store-frontend
 # Copiar SOLO el frontend
 COPY store-frontend/package*.json ./
 
 #files from frontend are copied on work directory
-COPY store-frontend/ .
+COPY . .
 
 #dependencies app need are installed
 RUN npm install
