@@ -9,7 +9,7 @@ WORKDIR /project/Store-frontend
 COPY Store-frontend/package*.json ./
 
 #dependencies app need are installed
-#RUN npm install
+RUN npm install
 
 #files from frontend are copied on work directory
 COPY Store-frontend/ .
