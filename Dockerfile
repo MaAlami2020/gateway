@@ -11,7 +11,7 @@ WORKDIR /project/store-frontend
 COPY . .
 
 #dependencies app need are installed
-RUN npm install
+#RUN npm install
 
 
 #files to production are generated in the specific route "new"
