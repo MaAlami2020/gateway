@@ -13,6 +13,8 @@ RUN npm install
 #files from frontend are copied on work directory
 COPY store-frontend/ ./
 
+COPY store-frontend/angular.json ./
+
 #files to production are generated in the specific route "new"
 RUN npm run build -- --base-href=/new/
 
