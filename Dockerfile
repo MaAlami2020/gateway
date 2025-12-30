@@ -3,7 +3,7 @@
 FROM node:18-alpine AS frontend-builder
 
 #definition of the work directory in /project to execute commands
-WORKDIR /project/store-frontend
+WORKDIR /project/gateway/storre-frontend
 # Copiar SOLO el frontend
 COPY store-frontend/package*.json ./
 #COPY store-frontend/angular*.json ./
@@ -18,7 +18,7 @@ COPY store-frontend/ ./
 RUN pwd && ls -la && ls -la angular.json
 
 #files to production are generated in the specific route "new"
-RUN npx ng build -- --base-href=/spa/
+RUN npx ng build -- --base-href=/new/
 
 ##BACKEND
 
