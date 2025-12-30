@@ -5,7 +5,7 @@ FROM node:18-alpine AS frontend-builder
 #definition of the work directory in /project to execute commands
 WORKDIR /project/store-frontend
 # Copiar SOLO el frontend
-#COPY store-frontend/package*.json ./
+COPY package*.json ./
 
 #files from frontend are copied on work directory
 COPY . .
