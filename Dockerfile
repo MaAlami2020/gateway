@@ -7,15 +7,14 @@ WORKDIR /project
 
 #files from frontend are copied on work directory
 COPY Store-frontend/ .
+RUN find /project -name package.json
+
 
 #dependencies app need are installed
 RUN npm install
 
-
-
-
 #files to production are generated in the specific route "new"
-RUN npm run build -- --base=href=/new/
+RUN npm run build -- --base-href=/new/
 
 ##BACKEND
 
