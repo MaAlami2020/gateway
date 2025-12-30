@@ -6,8 +6,8 @@ FROM node:18-alpine AS builder
 WORKDIR /project
 
 #files from frontend are copied on work directory
-COPY Store-frontend/ .
-COPY Store-frontend/package.json ./
+COPY Store-frontend/* .
+#COPY Store-frontend/package.json .
 
 #dependencies app need are installed
 RUN npm install
