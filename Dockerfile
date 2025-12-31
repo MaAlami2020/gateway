@@ -37,7 +37,7 @@ COPY gateway/src /project/src
 # files are copied
 # origin --> dist/frontend
 # destiny --> src/main/resources/static/(new)
-COPY --from=frontend-builder /project/dist/store-frontend /project/src/main/resources/static/new
+COPY --from=frontend-builder /project/store-frontend/dist/store-frontend /project/src/main/resources/static/new
 
 # app building once the code is compiled
 RUN mvn clean package -DskipTests=true
