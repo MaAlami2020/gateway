@@ -3,7 +3,7 @@
 FROM node:18-alpine AS frontend-builder
 
 #definition of the work directory in /project to execute commands
-WORKDIR /project/gateway/storre-frontend
+WORKDIR /project/gateway/store-frontend
 # Copiar SOLO el frontend
 COPY store-frontend/package*.json ./
 #COPY store-frontend/angular*.json ./
