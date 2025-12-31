@@ -15,7 +15,7 @@ RUN npm install
 COPY store-frontend/ ./
 
 #files to production are generated in the specific route "new"
-RUN npx ng build -- --base-href=/new/
+#RUN npx ng build -- --base-href=/new/
 
 ##BACKEND
 
