@@ -42,7 +42,7 @@ spec:
   rules:
     http:
       paths:
-      - path: /
+      - path: /store
         pathType: Prefix
         backend:
           service:
