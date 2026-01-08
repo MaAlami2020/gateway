@@ -9,7 +9,7 @@ WORKDIR /project
 COPY store-frontend/ .
 
 #dependencies app need are installed
-RUN npm install -g @angular/cli
+RUN npm ci
 
 #files from frontend are copied on work directory
 #COPY store-frontend/ ./
