@@ -1,6 +1,6 @@
 #FRONTEND
 #selection of the image base
-FROM node:18-alpine AS frontend-builder
+FROM node:20-alpine AS frontend-builder
 
 #definition of the work directory in /project to execute commands
 WORKDIR /project
