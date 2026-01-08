@@ -1,21 +1,21 @@
 #FRONTEND
 #selection of the image base
-#FROM node:18-alpine AS frontend-builder
-#
-##definition of the work directory in /project to execute commands
-#WORKDIR /project/gateway/store-frontend
-## Copiar SOLO el frontend
+FROM node:18-alpine AS frontend-builder
+
+#definition of the work directory in /project to execute commands
+WORKDIR /project
+# Copiar SOLO el frontend
 #COPY store-frontend/package*.json ./
-##COPY store-frontend/angular*.json ./
-#
-##dependencies app need are installed
-#RUN npm install
-#
-##files from frontend are copied on work directory
+COPY store-frontend/ .
+
+#dependencies app need are installed
+RUN npm install
+
+#files from frontend are copied on work directory
 #COPY store-frontend/ ./
-#
+
 #files to production are generated in the specific route "new"
-#RUN npx ng build -- --base-href=/new/
+RUN npm ng build -- --base-href=/new/
 
 ##BACKEND
 
@@ -37,7 +37,7 @@ COPY gateway/src /project/src
 # files are copied
 # origin --> dist/frontend
 # destiny --> src/main/resources/static/(new)
-#COPY --from=frontend-builder /store-frontend/dist/store-frontend /gateway/src/main/resources/static/new
+COPY --from=frontend-builder /project/dist/store-frontend /project/src/main/resources/static/new
 
 # app building once the code is compiled
 RUN mvn clean package -DskipTests=true
