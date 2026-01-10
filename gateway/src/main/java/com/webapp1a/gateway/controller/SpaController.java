@@ -8,6 +8,6 @@ public class SpaController {
     
     @RequestMapping(value = "/new/**")
     public String forward() {
-        return "forward:/new/index.html";
+        return "redirect:/new/index.html";
     }
 }
