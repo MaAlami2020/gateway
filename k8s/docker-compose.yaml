@@ -1,12 +1,14 @@
 version: "3.9"
 services: 
   web:
-    build: .
-    image: maalami2020/springbootgateway:latest
+    build: 
+      context: ..
+      dockerfile: Dockerfile
+    image: maalami/springbootgateway
     ports:
       - 8442:8442
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/items
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/items
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=Mundialmente1
     restart: always
