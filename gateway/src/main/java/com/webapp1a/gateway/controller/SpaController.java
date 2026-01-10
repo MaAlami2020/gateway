@@ -4,6 +4,8 @@ import java.net.URI;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RequestPredicates;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
@@ -15,8 +17,11 @@ public class SpaController {
     @Bean
     public RouterFunction<ServerResponse> spaRouter() {
         return RouterFunctions.route(
-            RequestPredicates.GET("/new"),
-            req -> ServerResponse.permanentRedirect(URI.create("/new/index.html")).build()
+            RequestPredicates.GET("/new/**")
+                .and(RequestPredicates.accept(MediaType.TEXT_HTML)),
+            request -> ServerResponse.ok()
+                .contentType(MediaType.TEXT_HTML)
+                .bodyValue(new ClassPathResource("static/new/index.html"))
         );
     }
 }
