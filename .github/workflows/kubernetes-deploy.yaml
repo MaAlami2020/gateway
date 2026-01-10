@@ -26,7 +26,7 @@ jobs:
       - name: Build and deploy image
         run: |
           IMAGE=maalami/springbootgateway:latest
-          docker build -t $IMAGE -f k8s/Dockerfile .
+          docker build -t $IMAGE -f k8s-gateway/Dockerfile .
           docker push $IMAGE
 
 #name: kubernetes-deploy
