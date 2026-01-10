@@ -17,6 +17,6 @@ public class SpaController {
 
      @GetMapping({"/new/**/{path:[^\\.]*}", "/new"})
     public String forward() {
-        return "forward:/new/index.html";
+        return "forward:static/new/index.html";
     }
 }
