@@ -21,7 +21,7 @@ public class SpaController {
                 .and(RequestPredicates.accept(MediaType.TEXT_HTML)),
             request -> ServerResponse.ok()
                 .contentType(MediaType.TEXT_HTML)
-                .bodyValue(new ClassPathResource("static/new/index.html"))
+                .bodyValue(new ClassPathResource("static/new/src/index.html"))
         );
     }
 }
