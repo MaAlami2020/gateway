@@ -12,7 +12,7 @@ import { Item } from "../../models/Item.model";
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule, RouterModule, FormsModule, NgxSpinnerModule],
+    imports: [RouterOutlet, CommonModule, RouterModule, FormsModule, NgxSpinnerModule],
     templateUrl: './home.component.html',
     providers: []
 })
